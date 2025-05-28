@@ -85,4 +85,5 @@ console.log(calculadorDeImc2(person))
  // MOCCHA: "MOCCHA"
  // LEITE : "leite"
 //}
-// a organização do objeto vai depender muito da escrita que o seu código precisa para funcionar desde que não esteja errado não há problema
+// a organização do objeto vai depender muito da escrita que o seu código precisa para funcionar desde que não esteja errado não há problema 
+// atraves do dicionário eu facilito a manutenção do código, visto que uma vez que eu preciso mudar um valor eu altero ele apenas em um lugar e dinâmicamente ele já esta alterado em todo o resto do código em que ele é utilizado o que evita um possível bug e uma grande dor de cabeça para descobrir em que ponto ele esta.
