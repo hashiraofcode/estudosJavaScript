@@ -55,3 +55,10 @@ switch (diaDaSemana) {
     default: console.log("Dia da semana inválido")
 }
 // no desenvolvimento é muito comum que o back-end crie status ao invês de a informação propriamente esperada, na maioria das vezes por conta de uma questão de organização, seja por questão do idioma em que a aplicação esta sendo desenvolvida que esta diferente dos valores no banco de dados. Por isso é muito comum que retornem estatus e nós do front utilizamos o swich para retornar o que precisamos a partir deste.
+
+//operadores ternarios são uma alternativa ao if/else tendo em vista que são muito mais concisos facilitando a legibilidade manutebilidade do código, porém é um solução limitado uma vez que se encadiarmos muitas condições para chegar no resultado esperado invalidando seu ponto positivo
+console.log("------------------------------------------------------------------------------------")
+idade >= 18 ? console.log("positivo") : console.log("negativo")
+let numero = 2;
+// o número é negativo
+numero > 0 ? console.log("o numero é positivo") : numero < 0 ? console.log("o numero é negativo") : console.log("numero invalido")
