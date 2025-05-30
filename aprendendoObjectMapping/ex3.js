@@ -4,7 +4,7 @@
 let HOUR_DICT = {
         MORNING: "MORNING",
         AFTERNOON: "AFTERNOON",
-        NIGHT: "NIGHT",
+        NIGHT: "NIGHT", 
         MIDNIGHT: "MIDNIGHT",
         DAWN: "DAWN",
 }
