@@ -76,7 +76,8 @@ const numeroAleatorio = (min, max) => {
 }
 
 const listaDeFruta = fruteira.map((item) => ({Fruta: item, Qnt: numeroAleatorio(0,20) })
-)   
+)  
+
 // gerei uma lista de frutas que tem o nome e as quantidades de frutas que eu possuo no estoque agora quantas frutas eu tenho no total?
 
 const contagemDeEstoque = listaDeFruta.reduce((previewValue, nextValue) => {
@@ -92,3 +93,29 @@ const frutasNoEstoque = listaDeFruta.reduce((previwValue, nextValue) => {
 
 console.log(`As frutas no estoque são: ${frutasNoEstoque}`)
 // assim eu posso manipular strings também.
+
+// Aprendendo .find
+// O find pega um item de array que satisfaça sua condição, porém o primeiro a satisfazer essa condição será retornado e o resto do array nem se quer vai ser iterado.
+
+// Por exemplo tenho uma caixa com bolas vermelhas e azuis  e eu quero selecionar de minha opção, eu posso usar o find para isso, pois eu quero qualquer bola vermelha ou azul e uma só então ele satisfaz a minha necessidade;
+
+const caixa = ["vermelho", "azul","vermelho", "azul","vermelho", "azul","vermelho", "azul","vermelho", "azul","vermelho", "azul"]
+
+const bolaColorida = caixa.find((item) => item === "vermelho")
+console.log(bolaColorida)
+
+//EXTRA OBJECT DESTRUTURING
+// objeto destruturing é uma técnica de trazer todas as propriedades de um objeto ou todos os valores de uma lista.
+
+// EX
+const guardaRoupa = [
+    {roupa: "meia", isDirty: true},
+    {roupa: "blusa", isDirty: true},
+    {roupa: "calça", isDirty: true},
+    {roupa: "jaqueta", isDirty: true}
+]
+
+// caso eu queira manipular os objetos e adicionar uma novo propriedade a eles mas manter as outras eu posso fazer isso com map e object destruturing evitando o trabalho de atualizar o meu objeto na fonte
+
+const guardaRoupaAtualizado = guardaRoupa.map((item) => ({...item, vestivel:true}))
+console.log(guardaRoupaAtualizado)
