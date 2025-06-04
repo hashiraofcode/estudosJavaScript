@@ -75,6 +75,20 @@ const numeroAleatorio = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-const listaDeFruta = fruteira.map((item) => {
-    return  {Fruta: item, Qnt: 0 }
-})
+const listaDeFruta = fruteira.map((item) => ({Fruta: item, Qnt: numeroAleatorio(0,20) })
+)   
+// gerei uma lista de frutas que tem o nome e as quantidades de frutas que eu possuo no estoque agora quantas frutas eu tenho no total?
+
+const contagemDeEstoque = listaDeFruta.reduce((previewValue, nextValue) => {
+    return previewValue + nextValue.Qnt
+}, 0)
+// por conta da função número aleatório a quantidade nunca será igual, mas a funcionalidade do reduce está correta
+console.log(`A quantidade total de frutas no estoque é: ${contagemDeEstoque}`)
+// agora quais são as frutas?
+const frutasNoEstoque = listaDeFruta.reduce((previwValue, nextValue) => {
+    if(!previwValue.length) return nextValue.Fruta 
+    return `${previwValue}, ${nextValue.Fruta}`
+}, "")
+
+console.log(`As frutas no estoque são: ${frutasNoEstoque}`)
+// assim eu posso manipular strings também.
