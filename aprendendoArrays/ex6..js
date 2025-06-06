@@ -155,4 +155,18 @@ conferindoCaixas(caixaDeMorangos,"morango")
 // mas e se a caixa pussuisse alguma fruta errada?
 let caixaDePeras = null;
 caixaDePeras = colocarFruta('pera', 30)
-conferindoCaixas(caixaDePeras,"pera")
+conferindoCaixas(caixaDePeras,"pera");
+
+// ordenando listas com sort
+// sort é uma propriedade do javaScript que manipula arrays de maneira a ordenar todos os itens;
+// Caso queira ordenar em ordem crescente ou alfabética é só não definir nenhum argumento na propriedade.
+const lista = [1,3,4,5,6,4,3,2,2,3,5,6,4,3,2];
+const alfabeto = ["a","e","l","b","d","r"]
+const listaOrdenada = lista.sort();
+console.log(listaOrdenada)
+const ordemAlfabetica = alfabeto.sort()
+console.log(ordemAlfabetica)
+// agora e se eu quiser em ordem decrescent? Para isso é só possar parametros para a função callback que você vai passar para a propriedade e fazer a função retornar a subitração dos dois;
+const ordemDecrescente = lista.sort((firstValue, secundValue) => secundValue - firstValue)
+console.log(ordemDecrescente)
+// algo interressante é que essa função vê se o retorno da expreção da callback é positivo ou negativo por exemplo em uma situação onde 1-2 é -1 ele não muda pois supoe que o primeiro valor é menor do que o segundo e na sua lógica esta correto agora 3-2 é igual a 1 o que indica que o primeiro valor é maior do que o segundo então ele inverte. Mas a questão e na ordem decrescente? pois é se invertemos o valor das callbacks ele vai fazer o mesmo processo porém conforme vai se reorganizando e calculando os valore vão ser positivos fazendo com que ele inverta os valores.
