@@ -119,3 +119,40 @@ const guardaRoupa = [
 
 const guardaRoupaAtualizado = guardaRoupa.map((item) => ({...item, vestivel:true}))
 console.log(guardaRoupaAtualizado)
+
+
+// Aprendendo some e every
+// some e every são propriedades que iteram sobre um array e a partir de uma analise sobre todos so itens com base em uma condição que você impõe;
+
+const estoqueDeFrutas = ["morango", "banana", "uva", "maçã"]
+// eu gostaria de saber se no meu estouque pussui alguma fruta além de morango e eu posso fazer isso utilizando o some, por que eu quero saber se tem uma fruta diferente e não se não há morangos
+
+const temFrutaDiferente = estoqueDeFrutas.some((fruta) => fruta != "morango")
+if (temFrutaDiferente == true) {
+    console.log("Sim há frutas diferentes!!")
+} 
+
+// agora eu estou separando minhas frutas por caixas e gostaria de começar com a de morango e para isso todas as frutas tem que ser igual a morango 
+
+const colocarFruta = (frutaDesejada, qntDesejada) => {
+    if (typeof frutaDesejada === "string") {
+        const caixaDefrutas = [];
+        for (let i = 0; i < qntDesejada; i++) {
+        caixaDefrutas.push(frutaDesejada)
+    }
+    return caixaDefrutas
+   }
+}
+const conferindoCaixas = (caixa,fruta) => {
+    const conferindo = caixa.every((item) => item === fruta)
+    if (conferindo) {
+        console.log("caixa correta!!!")
+    } else console.log("Caixa incorreta!!!")
+}
+
+const caixaDeMorangos = colocarFruta("morango",20)
+conferindoCaixas(caixaDeMorangos,"morango")
+// mas e se a caixa pussuisse alguma fruta errada?
+let caixaDePeras = null;
+caixaDePeras = colocarFruta('pera', 30)
+conferindoCaixas(caixaDePeras,"pera")
