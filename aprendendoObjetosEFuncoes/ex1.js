@@ -6,7 +6,8 @@ let mochila = {
     estojo: "lapis de cor"
 }
 // caso queira acessar uma propriedade especifica basta selecionar o objeto e colocar um ponto que você ja estara acessando dentro dele;
-// ou caso queira deletar é sé executar uma palavra delete antes do objeto e sua propriedade
+// ou caso queira deletar é só executar uma palavra delete antes do objeto e sua propriedade
 delete mochila.caneta
+mochila.calculadora = "calculadora"
 console.log(mochila)
 console.log(mochila.estojo)

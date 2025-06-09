@@ -19,18 +19,18 @@ function relogioStatus(hora) {
     return HOUR_DICT.NIGHT
 } else if (hora < 6 && hora > 0) {
     return HOUR_DICT.DAWN
-}
+}   
 }
 
 // fazendo o object mapping
-function returnComprimento(RELOGIO_STATUS) {
-    return {
-        [HOUR_DICT.MORNING]: "Bom dia, caro amigo S2",
-        [HOUR_DICT.AFTERNOON]: "Bom tarde, caro amigo S2",
-        [HOUR_DICT.MIDNIGHT]: "Esta ficando tarde, vá dormir!!!",
-        [HOUR_DICT.DAWN]: "Oque você ainda esta fazendo acordado? ;-;", 
-    }[RELOGIO_STATUS] || "insira um horário correto"
-}
+    function returnComprimento(RELOGIO_STATUS) {
+        return {
+            [HOUR_DICT.MORNING]: "Bom dia, caro amigo S2",
+            [HOUR_DICT.AFTERNOON]: "Bom tarde, caro amigo S2",
+            [HOUR_DICT.MIDNIGHT]: "Esta ficando tarde, vá dormir!!!",
+            [HOUR_DICT.DAWN]: "Oque você ainda esta fazendo acordado? ;-;", 
+        }[RELOGIO_STATUS] || "insira um horário correto"
+    }
 
 // fazendo a função que vai retornar o comprimento
 
