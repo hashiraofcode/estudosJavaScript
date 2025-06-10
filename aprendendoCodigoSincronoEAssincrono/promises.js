@@ -35,4 +35,55 @@ const promiseBD = new Promise((resolve,reject) => {
 promiseBD
     .then((mensagem) => {console.log(mensagem)})
     .catch((erro) => {console.log(erro)})
+// outro exercício proposto foi fazer um sistema de pagamento utilizando a assincronicidade do código vou tentar replicar aqui de cabeça;
+
+console.log("fazendo pedido")
+// fiz um exercício colocando em prática o aprendizado de primises e de encadeamento de thens
+// testando encadeamento
+const promessaDeSalgado = new Promise((resolve,reject) => {
+    const salgado = true;
+    console.log (`Tem salgado: ${salgado ? "sim" : "não"}`);
+    
+
+    setTimeout((() => {
+        if(salgado) {
+            resolve({pedidoFeito: true, status:"Fritando Salgado"});
+        } else reject("Não temos salgado volte mais tarde");
+    }),5000);
+});
+
+const promessaDeEmbalar = (pedido) => {
+   return new Promise((resolve,reject) => {
+        console.log("Conferindo se o pedido está pronto");
+       
+
+
+        setTimeout(() => {
+            if (pedido.pedidoFeito) {
+                resolve({embalado: true, status: "pronto"});
+            } else reject("algo deu errado no preparo. Entre em contato com um de nossos atendentes");
+        },5000);
+    });
+};
+
+console.log("Fazendo meu pedido")
+
+promessaDeSalgado
+    .then((pedido) => {
+    console.log("Seu pedido foi feito com sucesso");
+    return promessaDeEmbalar(pedido)
+    })
+    .then((entrega) => {
+        console.log(entrega)
+        const resultadoDoPedido = entrega.embalado ? true: false;
+        if(resultadoDoPedido) {
+            console.log("Seu pedido está a caminho")
+        }
+    })
+    .catch((erro) => {
+        console.log(erro)
+    });
+ 
+
+
 
