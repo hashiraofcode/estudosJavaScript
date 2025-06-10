@@ -4,3 +4,4 @@ console.log("em dois segundos comprimente o meu amigo")
 setTimeout(() => {
     console.log("olá amigo")
 }, 2000)
+
