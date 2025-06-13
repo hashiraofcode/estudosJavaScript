@@ -88,3 +88,58 @@ console.log(calculadorDeImc2(person))
 // a organização do objeto vai depender muito da escrita que o seu código precisa para funcionar desde que não esteja errado não há problema
 // atraves do dicionário eu facilito a manutenção do código, visto que uma vez que eu preciso mudar um valor eu altero ele apenas em um lugar e dinâmicamente ele já esta alterado em todo o resto do código em que ele é utilizado o que evita um possível bug e uma grande dor de cabeça para descobrir em que ponto ele esta.
 // Troque a estrutura do switch por um object mapping que executa a mesma função porém é melhor para escalabilidade e manutenção do código, ou seja, uma boa e moderna prática para o mercado
+
+
+// desafio contar vogais
+   // object mapping
+
+
+/*
+const contarVogais = (palavra) => {
+   const objetoVogais = { 
+            "a": 0,
+            "e": 0,
+            "i": 0,
+            "o": 0,
+            "u": 0,
+            "Qnt de vogais":0      
+   }
+   if (typeof palavra === "string"){
+      let valor = 0;
+      for (let letra of palavra) {
+         if (letra === "a" || letra === "i" || letra === "e" || letra === "o" || letra === "u") {
+            objetoVogais[letra] = objetoVogais[letra] + 1;
+            valor = valor + 1;
+         };
+      };
+        objetoVogais["Qnt de vogais"] = valor;
+        return `As vogais da palavra são:\n 
+        a: ${objetoVogais["a"]}\n 
+        e: ${objetoVogais["e"]}\n 
+        i: ${objetoVogais["i"]}\n 
+        o: ${objetoVogais["o"]}\n 
+        u: ${objetoVogais["u"]}\n 
+        Quantidade de vogais totais: ${objetoVogais["Qnt de vogais"]}`
+   } else return "Insira uma palavra válida"; 
+};
+
+
+console.log(contarVogais("paralelepipedo"))
+*/
+
+const funcaoEliminaCópias = (arr) => {
+   let listaFinal = [];
+   arr.forEach((numero) =>{
+      const autorizacao = listaFinal.some((item) => item === numero)
+      if(!autorizacao) {
+         listaFinal.push(numero)
+      }
+   })
+   return listaFinal
+}
+const arrayTeste = [1, 2, 2, 3, 4, 4, 5];
+const teste = funcaoEliminaCópias(arrayTeste)
+console.log(teste)
+
+// treinando callback
+
